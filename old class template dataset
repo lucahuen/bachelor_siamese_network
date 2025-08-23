@@ -1,0 +1,135 @@
+from torch.utils.data import Dataset
+import os
+import random
+from PIL import Image
+
+
+class ClassTemplateDataset(Dataset):
+    def __init__(self, cls: int, max_samples_per_class=1, transform=None, strategy=None, margin=0.1):
+
+        assert strategy in [None, "RANDOM", "DISTANT"], "strategy must be RANDOM or DISTANT"
+
+        root_dir = "data/RVL_CDIP/images"
+        label_file = "data/RVL_CDIP/labels/val.txt"
+
+        self.all_image_paths = []
+        self.cls = cls
+        self.transform = transform
+
+        with open(label_file, 'r') as f:
+            for line in f:
+                # brich ab wenn du alle bilder hast
+                if len(self.all_image_paths) >= max_samples_per_class:
+                    print(f"fertig")
+                    break
+
+                # wähle bild zufällig
+                random_image_path, random_image_label = line.strip().split()
+                random_image_full_path = os.path.join(root_dir, random_image_path)
+                random_image_label = int(random_image_label)
+                if random_image_label != cls:
+                    continue
+                random_image = Image.open(random_image_full_path)
+                random_image = self.transform(random_image).to(device)
+                random_image = random_image.unsqueeze(0)
+
+                if strategy == "RANDOM":
+                    print(f"chosen random image")
+                    self.all_image_paths.append((random_image_full_path, label))
+                elif strategy == "DISTANT":
+                    # berechne durchschnittliche distanz zu 100 bildern der gleichen klasse
+                    avg_dist_of_random_image = 0.0
+                    counter = 0
+                    counter_limit = 10
+                    for new_line in f:
+                        if counter >= counter_limit:
+                            break
+                        new_img_path, new_img_label = new_line.strip().split()
+                        new_img_full_path = os.path.join(root_dir, new_img_path)
+                        new_img_label = int(new_img_label)
+                        if new_img_label != cls or random_image_full_path == new_img_full_path:
+                            continue
+                        counter += 1
+
+                        new_img = Image.open(new_img_full_path)
+                        new_img = self.transform(new_img).to(device)
+                        new_img = new_img.unsqueeze(0)
+
+                        random_image_emb = F.normalize(net(random_image))
+                        new_img_emb = F.normalize(net(new_img))
+                        avg_dist_of_random_image += F.pairwise_distance(random_image_emb, new_img_emb)
+                    avg_dist_of_random_image /= counter_limit
+
+                    # wenn durchschnittliche distanz nicht im bereich des margin liegt wähle neues bild
+                    if not (avg_same_dists - margin <= avg_dist_of_random_image <= avg_same_dists + margin):
+                        continue
+
+                    # ist das mein erstes bild?
+                    avg_dist_of_next_chosen_image = 0
+                    if len(self.all_image_paths) == 0:
+                        self.all_image_paths.append((random_image_full_path, random_image_label))
+                    else:
+                        # berechne die distanz zu den bereits gewählten bildern
+                        current_imgs = [Image.open(path) for path, _ in self.all_image_paths]
+                        current_imgs = [self.transform(img).to(device) for img in current_imgs]
+                        current_imgs = [img.unsqueeze(0) for img in current_imgs]
+
+                        highest_dist = 0
+                        final_choice = None
+                        counter = 0
+                        counter_limit = 50
+                        for new_line in f:
+                            if counter >= counter_limit:
+                                break
+                            new_img_path, new_img_label = new_line.strip().split()
+                            new_img_full_path = os.path.join(root_dir, new_img_path)
+                            new_img_label = int(new_img_label)
+                            if new_img_label != cls:
+                                continue
+                            counter += 1
+                            new_img = Image.open(new_img_full_path)
+                            new_img = self.transform(new_img).to(device)
+                            new_img = new_img.unsqueeze(0)
+
+                            avg_dist = 0
+                            for img in current_imgs:
+                                emb1 = F.normalize(net(img))
+                                emb2 = F.normalize(net(new_img))
+                                avg_dist += F.pairwise_distance(emb1, emb2)
+                            avg_dist /= len(current_imgs)
+
+                            # ist die distanz höher als vorherige -> wählen
+                            if avg_dist > highest_dist:
+                                highest_dist = avg_dist
+                                final_choice = new_img_full_path
+
+                                avg_dist_of_next_chosen_image = avg_dist
+                        self.all_image_paths.append((final_choice, label))
+
+    def get_class(self):
+        return self.cls
+
+    def __len__(self):
+        return len(self.all_image_paths)
+
+    def __getitem__(self, idx):
+        img_path, img_class = self.all_image_paths[idx]
+        img = Image.open(img_path)
+
+        if self.transform:
+            img = self.transform(img)
+
+        img_class = 0
+        return img, img_class
+
+    def get_all_items(self):
+        imgs = []
+        for img_path, _ in self.all_image_paths:
+            img = Image.open(img_path)
+
+            if self.transform:
+                img = self.transform(img)  # PIL -> Tensor (C,H,W)
+
+            imgs.append(img)
+
+        return imgs
