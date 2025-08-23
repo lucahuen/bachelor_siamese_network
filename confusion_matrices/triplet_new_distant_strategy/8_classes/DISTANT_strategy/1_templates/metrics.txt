@@ -1,0 +1,30 @@
+
+================= Threshold: (8_DISTANT_1) =================
+Klasse 'form':
+  -> Recall:    42.00%
+  -> Precision: 43.08%
+Klasse 'email':
+  -> Recall:    99.00%
+  -> Precision: 98.51%
+Klasse 'advertisement':
+  -> Recall:    88.50%
+  -> Precision: 91.24%
+Klasse 'specification':
+  -> Recall:    76.00%
+  -> Precision: 83.52%
+Klasse 'file folder':
+  -> Recall:    93.00%
+  -> Precision: 87.32%
+Klasse 'budget':
+  -> Recall:    5.50%
+  -> Precision: 12.79%
+Klasse 'invoice':
+  -> Recall:    75.00%
+  -> Precision: 52.63%
+Klasse 'presentation':
+  -> Recall:    91.00%
+  -> Precision: 70.00%
+Klasse 'resume':
+  -> Recall:    89.00%
+  -> Precision: 96.74%
+Gesamt-Accuracy: 73.22%

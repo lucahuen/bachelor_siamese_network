@@ -1,0 +1,90 @@
+
+================= Threshold: (8_DISTANT_1_0.25180 (-5%)) =================
+Klasse 'form':
+  -> Recall:    8.50%
+  -> Precision: 33.33%
+Klasse 'email':
+  -> Recall:    98.00%
+  -> Precision: 99.49%
+Klasse 'advertisement':
+  -> Recall:    1.00%
+  -> Precision: 6.67%
+Klasse 'specification':
+  -> Recall:    53.50%
+  -> Precision: 97.27%
+Klasse 'file folder':
+  -> Recall:    75.50%
+  -> Precision: 94.97%
+Klasse 'invoice':
+  -> Recall:    39.50%
+  -> Precision: 54.86%
+Klasse 'presentation':
+  -> Recall:    29.50%
+  -> Precision: 88.06%
+Klasse 'resume':
+  -> Recall:    73.50%
+  -> Precision: 100.00%
+Klasse 'unknown':
+  -> Recall:    64.50%
+  -> Precision: 14.41%
+Gesamt-Accuracy: 49.28%
+
+================= Threshold: (8_DISTANT_1_0.26506 (mean)) =================
+Klasse 'form':
+  -> Recall:    12.00%
+  -> Precision: 36.36%
+Klasse 'email':
+  -> Recall:    98.00%
+  -> Precision: 98.99%
+Klasse 'advertisement':
+  -> Recall:    1.00%
+  -> Precision: 6.06%
+Klasse 'specification':
+  -> Recall:    56.50%
+  -> Precision: 96.58%
+Klasse 'file folder':
+  -> Recall:    78.00%
+  -> Precision: 93.98%
+Klasse 'invoice':
+  -> Recall:    45.50%
+  -> Precision: 54.82%
+Klasse 'presentation':
+  -> Recall:    39.00%
+  -> Precision: 86.67%
+Klasse 'resume':
+  -> Recall:    74.50%
+  -> Precision: 100.00%
+Klasse 'unknown':
+  -> Recall:    59.00%
+  -> Precision: 14.48%
+Gesamt-Accuracy: 51.50%
+
+================= Threshold: (8_DISTANT_1_0.27831 (+5%)) =================
+Klasse 'form':
+  -> Recall:    13.00%
+  -> Precision: 32.10%
+Klasse 'email':
+  -> Recall:    98.50%
+  -> Precision: 98.99%
+Klasse 'advertisement':
+  -> Recall:    1.00%
+  -> Precision: 5.88%
+Klasse 'specification':
+  -> Recall:    57.00%
+  -> Precision: 94.21%
+Klasse 'file folder':
+  -> Recall:    81.00%
+  -> Precision: 94.19%
+Klasse 'invoice':
+  -> Recall:    53.00%
+  -> Precision: 53.81%
+Klasse 'presentation':
+  -> Recall:    47.00%
+  -> Precision: 87.04%
+Klasse 'resume':
+  -> Recall:    75.00%
+  -> Precision: 100.00%
+Klasse 'unknown':
+  -> Recall:    49.00%
+  -> Precision: 13.28%
+Gesamt-Accuracy: 52.72%

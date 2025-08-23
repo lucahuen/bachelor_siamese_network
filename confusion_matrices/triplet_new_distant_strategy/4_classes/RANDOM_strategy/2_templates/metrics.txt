@@ -1,0 +1,18 @@
+
+================= Threshold: (4_RANDOM_2) =================
+Klasse 'advertisement':
+  -> Recall:    87.50%
+  -> Precision: 95.63%
+Klasse 'specification':
+  -> Recall:    93.00%
+  -> Precision: 68.38%
+Klasse 'file folder':
+  -> Recall:    97.50%
+  -> Precision: 91.12%
+Klasse 'presentation':
+  -> Recall:    88.00%
+  -> Precision: 76.52%
+Klasse 'resume':
+  -> Recall:    40.50%
+  -> Precision: 80.20%
+Gesamt-Accuracy: 81.30%

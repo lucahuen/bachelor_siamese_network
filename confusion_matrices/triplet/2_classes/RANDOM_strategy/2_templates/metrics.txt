@@ -1,0 +1,36 @@
+
+================= Threshold: (2_RANDOM_2_0.09344 (-5%)) =================
+Klasse 'advertisement':
+  -> Recall:    48.00%
+  -> Precision: 57.83%
+Klasse 'file folder':
+  -> Recall:    69.00%
+  -> Precision: 93.88%
+Klasse 'unknown':
+  -> Recall:    61.00%
+  -> Precision: 42.51%
+Gesamt-Accuracy: 59.33%
+
+================= Threshold: (2_RANDOM_2_0.09836 (mean)) =================
+Klasse 'advertisement':
+  -> Recall:    52.50%
+  -> Precision: 58.33%
+Klasse 'file folder':
+  -> Recall:    70.50%
+  -> Precision: 93.38%
+Klasse 'unknown':
+  -> Recall:    58.00%
+  -> Precision: 43.12%
+Gesamt-Accuracy: 60.33%
+
+================= Threshold: (2_RANDOM_2_0.10327 (+5%)) =================
+Klasse 'advertisement':
+  -> Recall:    58.00%
+  -> Precision: 58.88%
+Klasse 'file folder':
+  -> Recall:    73.00%
+  -> Precision: 92.99%
+Klasse 'unknown':
+  -> Recall:    54.50%
+  -> Precision: 44.31%
+Gesamt-Accuracy: 61.83%

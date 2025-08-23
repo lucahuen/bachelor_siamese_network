@@ -1,0 +1,54 @@
+
+================= Threshold: (4_DISTANT_5_0.09222 (-5%)) =================
+Klasse 'advertisement':
+  -> Recall:    51.50%
+  -> Precision: 80.47%
+Klasse 'specification':
+  -> Recall:    60.00%
+  -> Precision: 86.96%
+Klasse 'file folder':
+  -> Recall:    30.00%
+  -> Precision: 63.16%
+Klasse 'presentation':
+  -> Recall:    40.00%
+  -> Precision: 51.61%
+Klasse 'unknown':
+  -> Recall:    84.50%
+  -> Precision: 34.92%
+Gesamt-Accuracy: 53.20%
+
+================= Threshold: (4_DISTANT_5_0.09708 (mean)) =================
+Klasse 'advertisement':
+  -> Recall:    52.00%
+  -> Precision: 78.79%
+Klasse 'specification':
+  -> Recall:    61.50%
+  -> Precision: 86.62%
+Klasse 'file folder':
+  -> Recall:    30.50%
+  -> Precision: 61.62%
+Klasse 'presentation':
+  -> Recall:    41.00%
+  -> Precision: 50.62%
+Klasse 'unknown':
+  -> Recall:    83.50%
+  -> Precision: 35.91%
+Gesamt-Accuracy: 53.70%
+
+================= Threshold: (4_DISTANT_5_0.10193 (+5%)) =================
+Klasse 'advertisement':
+  -> Recall:    54.00%
+  -> Precision: 77.14%
+Klasse 'specification':
+  -> Recall:    63.00%
+  -> Precision: 86.90%
+Klasse 'file folder':
+  -> Recall:    31.50%
+  -> Precision: 59.43%
+Klasse 'presentation':
+  -> Recall:    42.00%
+  -> Precision: 50.60%
+Klasse 'unknown':
+  -> Recall:    83.50%
+  -> Precision: 37.70%
+Gesamt-Accuracy: 54.80%

@@ -1,0 +1,30 @@
+
+================= Threshold: (8_RANDOM_5) =================
+Klasse 'form':
+  -> Recall:    56.50%
+  -> Precision: 57.07%
+Klasse 'email':
+  -> Recall:    99.00%
+  -> Precision: 98.51%
+Klasse 'advertisement':
+  -> Recall:    84.00%
+  -> Precision: 91.80%
+Klasse 'specification':
+  -> Recall:    85.50%
+  -> Precision: 73.71%
+Klasse 'file folder':
+  -> Recall:    95.50%
+  -> Precision: 83.41%
+Klasse 'budget':
+  -> Recall:    5.00%
+  -> Precision: 41.67%
+Klasse 'invoice':
+  -> Recall:    82.50%
+  -> Precision: 54.46%
+Klasse 'presentation':
+  -> Recall:    90.00%
+  -> Precision: 74.69%
+Klasse 'resume':
+  -> Recall:    90.50%
+  -> Precision: 95.77%
+Gesamt-Accuracy: 76.50%

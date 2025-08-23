@@ -1,0 +1,12 @@
+
+================= Threshold: (2_DISTANT_2) =================
+Klasse 'advertisement':
+  -> Recall:    93.00%
+  -> Precision: 59.42%
+Klasse 'file folder':
+  -> Recall:    97.00%
+  -> Precision: 79.51%
+Klasse 'presentation':
+  -> Recall:    15.50%
+  -> Precision: 72.09%
+Gesamt-Accuracy: 68.50%
